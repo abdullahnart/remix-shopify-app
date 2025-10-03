@@ -1,0 +1,31 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "29d8ee96808d57353a36426d88e8a4f8"
+name = "my-product-from-builder"
+application_url = "https://opposite-overcome-yen-told.trycloudflare.com"
+embedded = true
+handle = "my-product-from-builder"
+
+[webhooks]
+api_version = "2025-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = ["https://opposite-overcome-yen-told.trycloudflare.com/auth/callback", "https://opposite-overcome-yen-told.trycloudflare.com/auth/shopify/callback", "https://opposite-overcome-yen-told.trycloudflare.com/api/auth/callback"]
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
